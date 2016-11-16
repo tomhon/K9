@@ -1,0 +1,24 @@
+{
+  "name": "k9",
+  "version": "1.0.0",
+  "description": "Internal TE, BE, Account lookup bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomhon/k9.git"
+  },
+  "author": "tomhon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomhon/k9/issues"
+  },
+  "homepage": "https://github.com/tomhon/k9#readme",
+  "dependencies": {
+    "botbuilder": "^3.4.4",
+    "restify": "^4.3.0",
+    "tedious": "^1.14.0"
+  }
+}
