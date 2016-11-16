@@ -5,10 +5,6 @@ server.listen(process.env.port || 80, function () {
     console.log('%s listening to %s', server.name, server.url); 
 });
 
-//hooks up survey.js
-// server.use(require('./survey'));
-
-
 
 // /*-----------------------------------------------------------------------------
 // This Bot demonstrates how to use an IntentDialog with a LuisRecognizer to add 
