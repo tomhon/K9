@@ -1,0 +1,5495 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "K9",
+  "desc": "WhoBot AI",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Abuse"
+    },
+    {
+      "name": "Fetch"
+    },
+    {
+      "name": "Find_Accounts"
+    },
+    {
+      "name": "Find_BE"
+    },
+    {
+      "name": "Find_Both"
+    },
+    {
+      "name": "Find_TE"
+    },
+    {
+      "name": "Happy"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Sad"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Account"
+    },
+    {
+      "name": "Evangelist"
+    }
+  ],
+  "composites": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "who's the be for flipboard",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "be pandora",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "te 4 vodafone",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "be for orange",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who's the te for netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "hello",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bonjour",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is the te for amazon",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "hey",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is the be for adobe",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "hi",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "thanks",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": ":-(",
+      "intent": "Sad",
+      "entities": []
+    },
+    {
+      "text": ":-)",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "do you know tay",
+      "intent": "Abuse",
+      "entities": []
+    },
+    {
+      "text": "find te for netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te for facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "find be for amazon",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is be for paypal",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for facebook",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for snapchat",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "be amazon",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "te amazon",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "be netflix",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "te facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "k9 fetch",
+      "intent": "Fetch",
+      "entities": []
+    },
+    {
+      "text": "please help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who are te and be for netflix",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who are be and te for amazon",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who are be te for facebook",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is te be for cbs",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "please find the te and be for snapchat",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "who manages netflix",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which te manages netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which be manages netflix",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "<quote author=\"bospoort\" authorname=\"bospoort\" conversation=\"28:79bb7742-d626-4bdf-b236-6f97fd61391e\" guid=\"xcebb206f42d5b8600458ed1fe4c51ae21c71d1b3bce91fdc0816a8190ec774a6\" timestamp=\"1464187636\"><legacyquote>[7:47:16 am] bospoort: </legacyquote>what accounts does ankur have<legacyquote> &lt;&lt;&lt; </legacyquote></quote>",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 58,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "who manages flipboard",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "when is the hulu uwp app releasing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "edited previous message: who is the te for yahoo!<e_m ts=\"1463792495\" ts_ms=\"1463792495000\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "who manages adobe",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages kik?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te 4 snap",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te 4 net",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for google",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for netlfix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "<ss type=\"smile\">:-)</ss>",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "sup dude",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "<ss type=\"sad\">:-(</ss>",
+      "intent": "Sad",
+      "entities": []
+    },
+    {
+      "text": "who is the be for chili?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who are be and te for viacom",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is the be for f",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is be for akamai",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for flip",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for bbc",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for alibaba",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for baidu",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who are the be and te for hulu",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "be for goog",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te 4 amaz",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "yo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whos is the te for adcolony",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te 4 twit",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te 4 ba",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for disney",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages vudu",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for fox",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te 4 drop",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for twitter",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te 4 b",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for yahoo!",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is te for face",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for viacom",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te 4 akamai",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te 4 kik",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for chili",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is te for baidu",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "hello!",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who are te and be for amazon",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "tay",
+      "intent": "Abuse",
+      "entities": []
+    },
+    {
+      "text": "te 4 t",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for yahoo",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for pandora",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is te for fox",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te 4 flip",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for twitter",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te for twit",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for bbc",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the be for facebook",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te for ba",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te for goog",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who are be and te for netflix",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is the te for flipboard",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te 4 snapchat",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for kik",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te 4 akamai",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te baidu",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te for yahoo!",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "snapchat te",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "te baidu",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "who is the te for facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te 4 yahoo",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for akamai",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te 4 s",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te fox",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "who is te for flip",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for netflix",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for yahoo",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te 4 facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te for akamai",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who iste for netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te for amazon",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is be for netf",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for netfl",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "and the te?",
+      "intent": "Find_TE",
+      "entities": []
+    },
+    {
+      "text": "te 4 netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for netfix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te 4 netlfix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for netf",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te 4 netf",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te 4 netfl",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "te 4",
+      "intent": "Find_TE",
+      "entities": []
+    },
+    {
+      "text": "who",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who is the te for line",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is be for flipboard",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "be for hulu",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is be for kik",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "whomanages soundcloud",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "be for gopro",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages baidu",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for paypal",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for nventive",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does richard guthrie manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what account does molly mccarthy manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does maarten manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "accounts owned by max zilberman",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which are stephen petheram accounts",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages google",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages sonos",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages kik interactive",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "and who is the pbe for facebook",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages rakuten",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who manages kik<e_m ts=\"1464201687\" ts_ms=\"1464201688000\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages tibco",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages directv",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which be and te manage flipboard",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is be for soundcloud",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who's the be for facebook",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is be for google",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is be for adobe<e_m ts=\"1464881322\" ts_ms=\"1464881323000\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "who is be for directv",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who's the be for rakuten",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages dish",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who's the te for rakuten",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is the te for tibco",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages gopro",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is be for adobe",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for tibco",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages paypal",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for dish",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for gopro",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for soundcloud",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te for hulu",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages soundcloud",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which te manages facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te for flipboard?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages kik",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages s",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages amazon",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "be for yahoo",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "ery nice",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is te for adobe",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages facebook",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is be for paypall",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for adboe",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages applovin",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for adboe",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "te for pandora",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the be for disney?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for disney?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for adobe",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "te for yahoo",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "oh is that so",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is the te for kodak?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does tobias own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what accounts does ankur have",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for expedia?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for plain concepts",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "which accounts does darren sterling own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does frederic ranger own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages waze",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for netflix?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does michael own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does jeff manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does neumann own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does ian own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does michael nathan own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "fetch",
+      "intent": "Fetch",
+      "entities": []
+    },
+    {
+      "text": "which accounts does laura manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does ian bennett own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does ian bennett manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does phillipe own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does nuno manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does philippe own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does troy own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does simon own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does molly own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does richard manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does darren own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages charter",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who maanges waze",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which accounts does ian manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does ian manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages weather",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which te manages charter",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which be owns charter",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who owns charter",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is the te for vsc<e_m ts=\"1465164213\" ts_ms=\"1465164213000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "who accounts does richard guthrie manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "@summarize",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who owns ge",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for snapchat",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does catarina own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the be for facebook?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what accounts does dalelinn have?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for nascar?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages disney",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "<quote author=\"bospoort\" authorname=\"bospoort\" conversation=\"28:79bb7742-d626-4bdf-b236-6f97fd61391e\" guid=\"xbebbc8b273535d28e192bc6e67611866f714e284a603b5a0bf263c668f598e44\" timestamp=\"1465338475\"><legacyquote>[3:27:55 pm] bospoort: </legacyquote>what accounts does maarten van de bospoort own<legacyquote> &lt;&lt;&lt; </legacyquote></quote>",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 58,
+          "endPos": 58
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 59,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: what accounts does maarten van de bospoort own<e_m ts=\"1465338475\" ts_ms=\"1465338475000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 8,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "what else can you do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who looks after spotify",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is the te for whatsapp<e_m ts=\"1465164213\" ts_ms=\"1465164213000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: what accounts does dalinn have<e_m ts=\"1465327727\" ts_ms=\"1465327727000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "what accounts does yorke rhodes own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is te for whatsapp<e_m ts=\"1465164259\" ts_ms=\"1465164259000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "what accounts does mike downey own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is anton davie the te for",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "you are up",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is te for crunchy roll",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: what accounts does dalelinn have?<e_m ts=\"1465327797\" ts_ms=\"1465327797000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "are you sure?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what accounts does maarten van de bospoort own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 4,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "what accounts does ankur badhwar manager?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is te for kik<e_m ts=\"1465164259\" ts_ms=\"1465164259000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "what accounts does justin denk have?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "ah?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "edited previous message: who is te for yahoo<e_m ts=\"1465164259\" ts_ms=\"1465164259000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "who is tiago",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is maarten",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is michael",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for slack",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for facebook?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does nino own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te for shazam",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what accounts does maartenb own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what accounts does dalinn have?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages mattel",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for match.com",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does jit manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who owns netflix",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages dt",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what accounts does ankur badwar own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for ge",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for orange?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages spotify",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the be for viber",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does nuno own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what accounts does max zilberman own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is the te for match.com<e_m ts=\"1466008572\" ts_ms=\"1466008573000\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "who is the be for yahoo",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what accounts does andy beach have?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what accounts does troy evans have",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what accounts does nuno silva own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "telefonica",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "which accounts does laura neumann own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does mike downey manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the be for match.com",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for vsco",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "boeing",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "what anput todd landstad?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does darren sterling manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for honeywell?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does mandy manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te for linkedin",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who owns cbs",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which accounts does mike downey own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what accounts does richard guthrie own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does jason manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does brian own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "so",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "which accounts does chris own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what accounts does ian bennett own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te on disney",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "todd landstad",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "who be for viber",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for shazam",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for nascar",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does tiago manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is te whatsapp",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the be for ge?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what accounts does max zilberman own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does laura comiskey own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the be for match",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages linkedin",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages telefonica",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is michael scherotter",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is richard",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for viacom?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what accounts does ankur badhwar own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the be for rakuten",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for spotify",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does max own?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who owns facebook?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for viber",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what accounts does ankur badwar own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "which accounts does richard manage?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for match",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what accounts does kehueb have",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the be for kik?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does richard own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for boeing?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which te owns netflix",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the be for kik",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the te for kik",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does maartenb own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for match?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is te for amdocs",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is ian",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which accounts does michael manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "which accounts does michale manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is rob",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is james",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is kelsey",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is ankur",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is max",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is kat",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is laura",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is simon",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is jit",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is tim",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is nathalie",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is tobias",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is andy",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is greg",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "lkj",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who works on ge",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for twitch?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is phillipe",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages whatsapp",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is peek and who is bennet",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages delta?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for adobe?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "facebook",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "who is amy",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "find te for facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "hulu",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "who manages delta",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is anton",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages sitecore",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who works on comcast?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages pearson",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what about for cbs",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is tiago andrade e silva",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "in what vertical is tiago",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is robbie",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is tiago<e_m ts=\"1467964715\" ts_ms=\"1467964715000\" a=\"tiagonmas\" t=\"61\"/>",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is steve",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is tom",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages ge",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is nuno",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for netflix?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who's",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what does max zilberman work on?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "find te amazon",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "oh, ok.. who is the te for cbs?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 10,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "what accounts does justin denk have",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the be for time warner?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who accounts does tiago manage ?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "why not?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "fidn te",
+      "intent": "Find_TE",
+      "entities": []
+    },
+    {
+      "text": "who manages match",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages faceit",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages hulu",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is philippe",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is be for linkedin",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is jason",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "find te orange",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for venticake",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages sage",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages nytimes",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages condenast",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for amadeus",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is be for dinsey",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages",
+      "intent": "Find_Both",
+      "entities": []
+    },
+    {
+      "text": "who is te for fitbit",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is te for net<e_m ts=\"1475882432\" ts_ms=\"1475882433337\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "m",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is the te for viber",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages facebook ?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages sony",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "find te vodafone",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "fretch",
+      "intent": "Fetch",
+      "entities": []
+    },
+    {
+      "text": "who manages meredith",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages twitter",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the be for twc",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages conde",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages netflic",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages mbl",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for boeing",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the be for amadeus",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "be for telefoni",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who managed pinterest",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "america movil",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "general electric",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "<uriobject type=\"video.1/flik.1\" uri=\"https://static.asm.skype.com/pes/v1/items/1b0cf2beda844bcea51a7fe96c040140\" url_thumbnail=\"https://static.asm.skype.com/pes/v1/items/1b0cf2beda844bcea51a7fe96c040140/views/thumbnail\"><title></title> <description>moji</description> <a href=\"https://login.skype.com/login/sso?go=xmmfallback&amp;1b0cf2beda844bcea51a7fe96c040140\">https://login.skype.com/login/sso?go=xmmfallback&amp;1b0cf2beda844bcea51a7fe96c040140</a><originalname v=\"footballer\" /></uriobject>",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "lol! just gimme the list.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "u r kewl",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "s'up dog",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "who's the te for dow jones?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "<ss type=\"puke\">(puke)</ss>",
+      "intent": "Sad",
+      "entities": []
+    },
+    {
+      "text": "who is peek and how is bennet ?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages new york times",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for go pro",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who's the te for conde nast",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "<ss type=\"pig\">(pig)</ss>",
+      "intent": "Sad",
+      "entities": []
+    },
+    {
+      "text": "who is the te for exit games?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "why is the sky blue?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who am i",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who are the tes for social and music?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "great. who manages iheartradio?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what partners does maartenb have",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "<ss type=\"cool\">(cool)</ss>",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "who ius maarten",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "hahaha",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "test",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "garbage",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "sprint",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "okay",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "counterpart for tiago",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is sofya",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "s'up dude",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who is denis",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is gregory",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is be for meso",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is be for nuance",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how owns sonos",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is te for linkedin<e_m ts=\"1475885668\" ts_ms=\"1475885669592\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "who is the te for jet.com",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "list all accounts",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hi, thanks",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "who's the te for dropbox",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who manages gopro<e_m ts=\"1473284702\" ts_ms=\"1473284703119\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is the te for mckesson",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is the be for walmart",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "which accounts does cornwell manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "hello, k9",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who is the te for tunein?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages weather channel",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who are peek and bennet ?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te fro facebook",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is te for reuters",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for america movil",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages dow jones?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages iac",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages chocolatey?",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for garmin",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages softbank",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages conde nast",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the te for time warner?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is the te for von",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages hearst",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who managed charter",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "which accounts does marc own",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages intuit",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who's andrade",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who manages netflix<e_m ts=\"1470367662\" ts_ms=\"1470367662431\" a=\"tom.honeybone\" t=\"61\"/>",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who is ian and who is brian",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages pga",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who are peek and bennet",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who is the te for time warner",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages peel",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages vent",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is jeff",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages showtime",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "edited previous message: who is the te for kik<e_m ts=\"1469141414\" ts_ms=\"1469141414596\" a=\"bospoort\" t=\"61\"/>",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "what accounts does joe manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who is the be for iheartradio?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages mlb",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages hbo",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the be for pinterest?",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages go pro",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages baseball",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is peek and bennet ?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "s'up",
+      "intent": "Happy",
+      "entities": []
+    },
+    {
+      "text": "who does denis manage",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is brian",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "sup",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "america",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "who is tiago andrade",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "te for face",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who manages tunein",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is peek and who is bennet ?",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "Evangelist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "who manages time warner",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "who manages fitbit",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is be for telefonica",
+      "intent": "Find_BE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "sprint te",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "who twitter",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "who's the te for conde",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "simon",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "who manages comcast",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for sonos?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who manages times",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is te for iheartradio",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "who manages line",
+      "intent": "Find_Both",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "who is the te for pinterest?",
+      "intent": "Find_TE",
+      "entities": [
+        {
+          "entity": "Account",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "who is andrade",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "tom honeybone",
+      "intent": "Find_Accounts",
+      "entities": [
+        {
+          "entity": "Evangelist",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    }
+  ]
+}
