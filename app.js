@@ -353,15 +353,14 @@ dialog.matches('Find_Both', [function (session, args, next) {
 //---------------------------------------------------------------------------------------------------    
 //handle the case where there's a request to reload data
 
+// var Fetch = require('./fetch');
+
 dialog.matches('Fetch', function (session, args, next) { 
     session.send( "Welcome to K9 on Microsoft Bot Framework. I can tell you which TE or BE manages any GISV partner." ); 
-    // session.send( "Local Partner data is live = " + (partnerISV.length > 0)); 
-    //list all errors
     arrayErr.forEach(function(item) {
         session.send( "K9 Bot = " + item); 
     });
     session.send( "K9 data is live = " + (arrayIsvTE.length > 0)); 
-                // session.endDialog("Session Ended");
     });
 
 //---------------------------------------------------------------------------------------------------    
