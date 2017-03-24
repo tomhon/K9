@@ -163,7 +163,8 @@ dialog.matches('Find_TE', [
             x++;
             };
             if (!found) {
-                console.log( "Sorry, I couldn't find the TE for " + account)
+                console.log( "Sorry, I couldn't find the TE for " + account);
+                session.send( "Sorry, I couldn't find the TE for " + account);
                 };
 
             // next line to assist with debug
@@ -230,7 +231,8 @@ dialog.matches('Find_BE', [
             x++;
             };
             if (!found) {
-                console.log( "Sorry, I couldn't find the BE for " + account)
+                console.log( "Sorry, I couldn't find the BE for " + account);
+                session.send( "Sorry, I couldn't find the BE for " + account);
                 };
 
             // next line to assist with debug
