@@ -45,7 +45,7 @@ connection.on('connect', function(err) {
     // If no error, then good to proceed.
     
         if (err) {
-            console.log(err);
+        //    console.log(err);
             arrayErr.push(err);
         } else {
           console.log("Connected to " + this.config.server + " " + this.config.options.database);
@@ -61,7 +61,7 @@ connection.on('connect', function(err) {
  function loadMappingArray() {
       
         request = new Request("SELECT Title, AssignedTE, AssignedBE FROM dbo.PartnerIsvs", function(err) {
-        console.log('loadMappingArray');
+
          if (err) {
             console.log(err);
             arrayErr.push(err);
@@ -141,7 +141,7 @@ dialog.matches('Find_TE', [
         console.log('in lookup function, account = ' + account);
         //create regex version of the searchAccount
         if (!account) {
-                 console.log("Sorry, I couldn't make out the name of the account you are looking for.");
+                // console.log("Sorry, I couldn't make out the name of the account you are looking for.");
                 builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for.");
         } else { 
                  searchAccount = new RegExp("\\b" + account+ "\\b", 'i');
@@ -149,13 +149,13 @@ dialog.matches('Find_TE', [
         var x = 0;
         var found = false;
                 // Next line to assist with debugging
-                 console.log("Looking for account " + searchAccount);
+                // console.log("Looking for account " + searchAccount);
         while ( x < arrayIsvTE.length) {
             if (arrayIsvTE[x].match(searchAccount)) {
             //post results to chat
                 if(arrayIsvTE[x+1]) {
-                    var msg = "The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1];
-                    console.log( msg); 
+                    // var msg = "The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1];
+                    // console.log( msg); 
                     session.send("The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1]);
                     found = true;
                     }
