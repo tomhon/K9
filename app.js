@@ -60,7 +60,7 @@ connection.on('connect', function(err) {
     
  function loadMappingArray() {
       
-        request = new Request("SELECT Title, AssignedTE, AssignedBE FROM dbo.PartnerIsvs", function(err) {
+        request = new Request("SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs", function(err) {
 
          if (err) {
             console.log(err);
@@ -86,7 +86,40 @@ connection.on('connect', function(err) {
         connection.execSql(request);
     };
 
+//function to display results Card for TE or BE
+function DisplayTEBECard (session, account, teOwner, beOwner, teOwnerAlias, teOwnerLocation, beOwnerAlias, BEorTE){
+    if (BEorTE == 'TE'){
+        var whichTitle = 'Technical'
+        var whichAlias = teOwnerAlias
+        var whichLocation = teOwnerLocation
+        var whichOwner = teOwner
+    } else if (BEorTE == 'BE'){
+        var whichTitle = 'Business'
+        var whichAlias = beOwnerAlias
+        var whichLocation = 'unknown'
+        var whichOwner = beOwner
+    }
+    
+    var msg = new builder.Message(session)
+            .attachments([
+                new builder.ThumbnailCard(session)
+                    .title(whichOwner)
+                    .subtitle(whichTitle + " Evangelist for " + account)
+                    .text('Alias: ' + whichAlias +  '\n' + 'Location: ' + whichLocation)
+                    .images([
+                        builder.CardImage.create(session, "http://who/photos/" + whichAlias + '.jpg')
+                    ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, "mailto:" + whichAlias + '@microsoft.com', 'Email ' + whichOwner),
+                        builder.CardAction.dialogAction(session, "which accounts does " + whichOwner + " own?", 'Other Accounts', 'Other Accounts')
+                    ])
+            ]);
+    session.send(msg);
+}
 
+function DisplayAccountCard(){
+    
+}
 
 // Create bot and bind to console
 // var connector = new builder.ConsoleConnector().listen();
@@ -107,7 +140,13 @@ var dialog = new builder.IntentDialog({ recognizers: [recognizer] });
 bot.dialog('/', dialog);
 var account = "";
 
+
+// Set Looping Variable to sue depending on how many columns we're pulling from SQL
+var loopVar = 6;
+
 // Add intent handlers
+
+//===============================Beginning of Find TE==========================  
 dialog.matches('Find_TE', [
     function (session, args, next) {
         console.log('Find_TE called');
@@ -121,20 +160,15 @@ dialog.matches('Find_TE', [
             // Prompt for account
             builder.Prompts.text(session, 'Which account would you like to find the TE for?');
             } 
-
-        }
-    ,
+        },
     function (session, results, next) {
         if (results.response) {
             var account = results.response;
             console.log('Account ' + account + ' now recongized')
         }
         next({response: account});
+    },
 
-    }
-    ,
-
-//===============================Beginning of Find TE==========================    
     function (session, results) {
         var searchAccount = "";
         var account = results.response;
@@ -144,7 +178,7 @@ dialog.matches('Find_TE', [
                 // console.log("Sorry, I couldn't make out the name of the account you are looking for.");
                 builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for.");
         } else { 
-                 searchAccount = new RegExp("\\b" + account+ "\\b", 'i');
+                 searchAccount = new RegExp("\\b" + account + "\\b", 'i');
         //search mapping array for searchAccount
         var x = 0;
         var found = false;
@@ -152,29 +186,20 @@ dialog.matches('Find_TE', [
                 // console.log("Looking for account " + searchAccount);
         while ( x < arrayIsvTE.length) {
             if (arrayIsvTE[x].match(searchAccount)) {
-            //post results to chat
+            // post results to chat
                 if(arrayIsvTE[x+1]) {
-                    // var msg = "The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1];
-                    // console.log( msg); 
-                    session.send("The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1]);
+                DisplayTEBECard(session, arrayIsvTE[x], arrayIsvTE[x+1], arrayIsvTE[x+2], arrayIsvTE[x+3], arrayIsvTE[x+4], arrayIsvTE[x+5], 'TE');
                     found = true;
                     }
                 };
-            x++;
-            x++;
-            x++;
+            x=x+loopVar;
+
             };
             if (!found) {
-                console.log( "Sorry, I couldn't find the TE for " + account);
                 session.send( "Sorry, I couldn't find the TE for " + account);
                 };
-
-            // next line to assist with debug
-            //   session.endDialog("Session Ended");
-            
         }
-
-    }
+    }    
 ]);
 //===============================End of Find TE==========================
 
@@ -212,7 +237,7 @@ dialog.matches('Find_BE', [
                 // console.log("Sorry, I couldn't make out the name of the account you are looking for.");
                 builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for.");
         } else { 
-                (searchAccount = new RegExp("\\b" + account+ "\\b", 'i'))
+                (searchAccount = new RegExp("\\b" + account + "\\b", 'i'))
 
         //search mapping array for searchAccount
         var x = 0;
@@ -223,15 +248,12 @@ dialog.matches('Find_BE', [
             if (arrayIsvTE[x].match(searchAccount)) {
             //post results to chat
                 if(arrayIsvTE[x+2]) {
-                    // var msg = "The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1];
-                    // console.log( msg); 
-                    session.send("The BE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+2]);
+                    DisplayTEBECard(session, arrayIsvTE[x], arrayIsvTE[x+1], arrayIsvTE[x+2], arrayIsvTE[x+3], arrayIsvTE[x+4], arrayIsvTE[x+5], 'BE');
                     found = true;
                     }
                 };
-            x++;
-            x++;
-            x++;
+            x=x+loopVar;
+;
             };
             if (!found) {
                 console.log( "Sorry, I couldn't find the BE for " + account);
@@ -276,20 +298,18 @@ dialog.matches('Find_Accounts', [function (session, args, next) {
                 if (arrayIsvTE[x+1].match(searchEvangelist)) {
                 //found TE match
                     if(arrayIsvTE[x]) {
-                        session.send( arrayIsvTE[x+1] + " is TE for " + arrayIsvTE[x]); 
+                        DisplayTEBECard(session, arrayIsvTE[x], arrayIsvTE[x+1], arrayIsvTE[x+2], arrayIsvTE[x+3], arrayIsvTE[x+4]);
                         found = true;
                         }
                     };
                 if (arrayIsvTE[x+2].match(searchEvangelist)) {
                 //found BE match
                     if(arrayIsvTE[x]) {
-                        session.send( arrayIsvTE[x+2] + " is BE for " + arrayIsvTE[x]); 
+                        DisplayTEBECard(session, arrayIsvTE[x], arrayIsvTE[x+1], arrayIsvTE[x+2], arrayIsvTE[x+3], arrayIsvTE[x+4]);
                         found = true;
                         }
                     };
-                x++
-                x++;
-                x++;
+                x=x+loopVar;
                 };
                 if (!found) {
                     session.send( "Sorry, I couldn't find the accounts for " + evangelist.entity)
@@ -333,17 +353,15 @@ dialog.matches('Find_Both', [function (session, args, next) {
                     if (arrayIsvTE[x].match(searchAccount)) {
                     //post results to chat
                         if(arrayIsvTE[x+1]) {
-                            session.send( "The TE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+1]); 
+                            DisplayTEBECard(session, arrayIsvTE[x], arrayIsvTE[x+1], arrayIsvTE[x+2], arrayIsvTE[x+3], arrayIsvTE[x+4], arrayIsvTE[x+5], 'TE');
                             found = true;
                             }
                         if(arrayIsvTE[x+2]) {
-                            session.send( "The BE for " + arrayIsvTE[x] + " is " + arrayIsvTE[x+2]); 
+                            DisplayTEBECard(session, arrayIsvTE[x], arrayIsvTE[x+1], arrayIsvTE[x+2], arrayIsvTE[x+3], arrayIsvTE[x+4], arrayIsvTE[x+5], 'BE');
                             found = true;
                             }
                         };
-                    x++;
-                    x++;
-                    x++;
+                    x=x+loopVar;
                     };
                     if (!found) {
                         session.send( "Sorry, I couldn't find the Evangelists for " + accountEntity.entity)
@@ -428,6 +446,5 @@ server.get('/', function (req, res) {
     }); 
     // res.send('K9 Production Bot Running');
 }); 
-
 
 
