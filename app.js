@@ -285,7 +285,8 @@ dialog.matches('Find_BE', [
 
 //===============================Beginning of Find Accounts==============
 
-dialog.matches('Find_Accounts', [function (session, args, next) { 
+dialog.matches('Find_Accounts', [
+    function (session, args, next) { 
     //handle the case where intent is List Accounts for BE or TE
     // use bot builder EntityRecognizer to parse out the LUIS entities
     var evangelist = builder.EntityRecognizer.findEntity(args.entities, 'Evangelist'); 
