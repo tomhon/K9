@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/tomhon/k9#readme",
   "dependencies": {
-    "botbuilder": "^3.4.4",
+    "botbuilder": "^3.8.0",
+    "jslint": "^0.10.3",
     "restify": "^4.3.0",
-    "tedious": "^1.14.0"
+    "tedious": "^1.15.0"
   }
 }
