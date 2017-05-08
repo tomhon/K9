@@ -106,7 +106,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
             .attachments([
                 new builder.ThumbnailCard(session)
                     .title(whichOwner)
-                    .subtitle(whichTitle + ' Evangelist for ' + account)
+                    .subtitle(whichTitle + ' Evangelist for ' + accountInfo.Title)
                     .text('Alias: ' + whichAlias +  '\n' + 'Location: ' + whichLocation)
                     .images([
                         builder.CardImage.create(session, 'http://who/photos/' + whichAlias + '.jpg')
