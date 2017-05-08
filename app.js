@@ -25,10 +25,10 @@ var Connection = require('tedious').Connection;
 //initialize mapping data array
 
 //accountArray is sourced from SQL Server
-var accountArray = new Array();
+var accountArray = [];
 
 //error logging array
-var arrayErr = new Array();
+var arrayErr = [];
 
 // set up SQL server connection using Application Environment Variables
 
@@ -72,7 +72,7 @@ function loadMappingArray() {
 
     //unpack data from SQL query
         request.on('row', function(columns) {
-            rowObject = new Array();
+            rowObject = [];
             columns.forEach(function(column) {
               if (column.value === null) {
                 rowObject[column.metadata.colName] = 'unknown';
@@ -106,7 +106,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
             .attachments([
                 new builder.ThumbnailCard(session)
                     .title(whichOwner)
-                    .subtitle(whichTitle + ' Evangelist for ' + account)
+                    .subtitle(whichTitle + ' Evangelist for ' + accountInfo.Title)
                     .text('Alias: ' + whichAlias +  '\n' + 'Location: ' + whichLocation)
                     .images([
                         builder.CardImage.create(session, 'http://who/photos/' + whichAlias + '.jpg')
@@ -346,8 +346,8 @@ dialog.matches('Find_Accounts', [function (session, args, next) {
             //search mapping array for searchAccount
             var x = 0;
             var found = false;
-            var resArr = new Array();
-            var distinctArr = new Array();
+            var resArr = [];
+            var distinctArr = [];
             var choiceStr = '';
             var titleStr = '';
             var whichAlias = '';
