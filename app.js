@@ -110,9 +110,9 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
                     .title(whichOwner)
                     .subtitle(whichTitle + " Evangelist for " + accountInfo.Title)
                     .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
-                    .images([
-                        builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
-                    ])
+                    // .images([
+                    //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
+                    // ])
                     .buttons([
                         builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
                         builder.CardAction.dialogAction(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
