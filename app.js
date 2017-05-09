@@ -14,6 +14,7 @@ server.listen(process.env.port || 3978, function () {
 // This Bot demonstrates how to use an IntentDialog with a LuisRecognizer to add
 // natural language support to a bot. The example also shows how to use
 // UniversalBot.send() to push notifications to a user.
+//test
 
 // For a complete walkthrough of creating this bot see the article below.
 
