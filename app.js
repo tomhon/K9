@@ -377,7 +377,7 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                     session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
                 } else {
                     for (x=0; x < resArr.length; x+=1){
-                        choiceStr = (choiceStr + resArr[x] + "//n");
+                        choiceStr = (choiceStr + resArr[x] + ", ");
                     }
                     choiceStr = choiceStr.slice(0,(choiceStr.length-2));
 
