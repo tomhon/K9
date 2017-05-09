@@ -115,8 +115,8 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
                     // ])
                     .buttons([
                         builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
-                        builder.CardAction.dialogAction(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
-                        builder.CardAction.dialogAction(session, srchStr + " for " + accountInfo.Title, srchStr + "?", srchStr + " for " + accountInfo.Title + "?")
+                        builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
+                        builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + "?", srchStr + " for " + accountInfo.Title + "?")
                     ])
             ]);
     session.send(msg);
@@ -131,8 +131,8 @@ function DisplayAccountCard(session, accountInfo){
                 .subtitle("Click below for more information about the account owners.")
                // .text("Technical Evangelist: " + teOwner + "\n " + "Business Evangelist: " + beOwner)
                  .buttons([
-                     builder.CardAction.dialogAction(session, "TE for " + accountInfo.Title, "TE: " + accountInfo.AssignedTE, "TE: " + accountInfo.AssignedTE),
-                     builder.CardAction.dialogAction(session, "BE for " + accountInfo.Title, "BE: " + accountInfo.AssignedBE, "BE: " + accountInfo.AssignedBE)
+                     builder.CardAction.postBack(session, "TE for " + accountInfo.Title, "TE: " + accountInfo.AssignedTE, "TE: " + accountInfo.AssignedTE),
+                     builder.CardAction.postBack(session, "BE for " + accountInfo.Title, "BE: " + accountInfo.AssignedBE, "BE: " + accountInfo.AssignedBE)
                  ])
             ]);
     session.send(msg);
