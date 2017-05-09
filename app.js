@@ -381,21 +381,21 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                         choiceStr = (choiceStr + resArr[x] + ", ");
                     }
                     choiceStr = choiceStr.slice(0,(choiceStr.length-2));
-                    session.send('Owned Accounts: ' + choiceStr);
-                    // var msg = new builder.Message(session)
-                    //     .attachments([
-                    //         new builder.HeroCard(session)
-                    //             .title(whichName)
-                    //             .subtitle(titleStr)
-                    //             .text("Owned Accounts: " + choiceStr)
-                    //             // .images([
-                    //             //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
-                    //             // ])
-                    //             .buttons([
-                    //                 builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichName)
-                    //             ])
-                    //     ]);
-                    // session.send(msg);
+                    //session.send('Owned Accounts: ' + choiceStr);
+                    var msg = new builder.Message(session)
+                        .attachments([
+                            new builder.SigninCard(session)
+                                // .title(whichName)
+                                // .subtitle(titleStr)
+                                .text("Owned Accounts: " + choiceStr)
+                                // .images([
+                                //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
+                                // ])
+                                // .buttons([
+                                //     builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichName)
+                                // ])
+                        ]);
+                    session.send(msg);
                 }
                     // next line to assist with debug
                     // session.endDialog("Session Ended");
