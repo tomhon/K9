@@ -387,9 +387,9 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                                 .title(whichName)
                                 .subtitle(titleStr)
                                 .text("Owned Accounts: " + choiceStr)
-                                .images([
-                                    builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
-                                ])
+                                // .images([
+                                //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
+                                // ])
                                 .buttons([
                                     builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichName)
                                 ])
