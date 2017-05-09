@@ -373,6 +373,7 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                     }
                     x++;
                 }
+                resArr.sort();
                 if (resArr.length === 0) {
                     session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
                 } else {
