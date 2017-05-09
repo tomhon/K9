@@ -116,7 +116,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
                     .buttons([
                         builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
                         builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
-                        builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + "?", srchStr + " for " + accountInfo.Title + "?")
+                        builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + " for " + accountInfo.Title + "?")
                     ])
             ]);
     session.send(msg);
