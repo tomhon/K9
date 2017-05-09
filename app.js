@@ -377,13 +377,13 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                     session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
                 } else {
                     for (x=0; x < resArr.length; x+=1){
-                        choiceStr = (choiceStr + resArr[x] + ", ");
+                        choiceStr = (choiceStr + resArr[x] + "//n");
                     }
                     choiceStr = choiceStr.slice(0,(choiceStr.length-2));
 
                     var msg = new builder.Message(session)
                         .attachments([
-                            new builder.ThumbnailCard(session)
+                            new builder.HeroCard(session)
                                 .title(whichName)
                                 .subtitle(titleStr)
                                 .text("Owned Accounts: " + choiceStr)
