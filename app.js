@@ -84,7 +84,6 @@ function loadMappingArray() {
             });
             accountArray.push(rowObject);
         });
-
         connection.execSql(request);
 }
 
@@ -105,35 +104,37 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
     }
 
     var msg = new builder.Message(session)
-            .attachments([
-                new builder.HeroCard(session)
-                    .title(whichOwner)
-                    .subtitle(whichTitle + " Evangelist for " + accountInfo.Title)
-                    .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
-                    // .images([
-                    //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
-                    // ])
-                    .buttons([
-                        builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
-                        builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
-                        builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + " for " + accountInfo.Title + "?")
-                    ])
-            ]);
+        .attachments([
+            new builder.HeroCard(session)
+                .title(whichOwner)
+                .subtitle(whichTitle + " Evangelist for " + accountInfo.Title)
+                .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
+                // .images([
+                //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
+                // ])
+                .buttons([
+                    builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
+                    builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
+                    builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + " for " + accountInfo.Title + "?")
+                ])
+        ]);
     session.send(msg);
 }
 
 // Not using this function yet.  When used, it will display full info for an account in a single card rather than a card for each of the owners
-function DisplayAccountCard(session, account){
+function DisplayAccountCard(session, accountInfo){
     var msg = new builder.Message(session)
         .attachments([
-            new builder.HeroCard(session)
-                .title(account)
-                .subtitle("Click below for more information about the account owners.")
-               // .text("Technical Evangelist: " + teOwner + "\n " + "Business Evangelist: " + beOwner)
-                //  .buttons([
-                //      builder.CardAction.postBack(session, "TE for " + accountInfo.Title, "TE: " + accountInfo.AssignedTE, "TE: " + accountInfo.AssignedTE),
-                //      builder.CardAction.postBack(session, "BE for " + accountInfo.Title, "BE: " + accountInfo.AssignedBE, "BE: " + accountInfo.AssignedBE)
-                //  ])
+            new builder.ReceiptCard(session)
+                .title(accountInfo.Title)
+                .items([
+                    builder.ReceiptItem.create(session, accountInfo.AssignedTE, "Technical Evangelist: "),
+                    builder.ReceiptItem.create(session, accountInfo.AssignedBE, "Business Evangelist: ")
+                ])
+                .buttons([
+                     builder.CardAction.openUrl(session, "mailto:" + accountInfo.AssignedTEAlias + "@microsoft.com", "Email " + accountInfo.AssignedTE),
+                     builder.CardAction.openUrl(session, "mailto:" + accountInfo.AssignedBEAlias + "@microsoft.com", "Email " + accountInfo.AssignedBE)
+                 ])
             ]);
     session.send(msg);
 }
@@ -145,29 +146,29 @@ function capitalizeFirstLetter(string) {
 
 //function to narrow down result set to discreet individual
 function DistinctPerson(session, accountArray, resArr, distinctArr, searchEvangelist, evangelist){
-            // build an array of matching BEs and TEs from search string
-            for (x=0; x < accountArray.length; x+=1) {
-                 if (accountArray[x].AssignedTE.match(searchEvangelist)) {
-                    resArr.push(accountArray[x].AssignedTE);
-                } else if (accountArray[x].AssignedBE.match(searchEvangelist)) {
-                    resArr.push(accountArray[x].AssignedBE);
+        // build an array of matching BEs and TEs from search string
+        for (x=0; x < accountArray.length; x+=1) {
+                if (accountArray[x].AssignedTE.match(searchEvangelist)) {
+                resArr.push(accountArray[x].AssignedTE);
+            } else if (accountArray[x].AssignedBE.match(searchEvangelist)) {
+                resArr.push(accountArray[x].AssignedBE);
+            }
+        }
+        for (x=0;x<resArr.length;x+=1) {
+            if(distinctArr.indexOf(resArr[x])===-1)
+                {
+                distinctArr.push(resArr[x]);
                 }
-            }
-            for (x=0;x<resArr.length;x+=1) {
-                if(distinctArr.indexOf(resArr[x])===-1)
-                    {
-                    distinctArr.push(resArr[x]);
-                    }
-            }
-            // If there is more than one Evangelist returned from the search, prompt for which one you want to know more about
-            if (distinctArr.length>1) {
-                session.send("There is more than one person named " + capitalizeFirstLetter(evangelist.entity) + ". Please be more specific.");
-                return true;
-                // NEED TO GET THE RESULTS FROM THE PROMPT AND SEND TO BOT
+        }
+        // If there is more than one Evangelist returned from the search, prompt for which one you want to know more about
+        if (distinctArr.length>1) {
+            session.send("There is more than one person named " + capitalizeFirstLetter(evangelist.entity) + ". Please be more specific.");
+            return true;
+            // NEED TO GET THE RESULTS FROM THE PROMPT AND SEND TO BOT
 
-                //builder.Prompts.choice(session, "Which " + capitalizeFirstLetter(evangelist.entity) + " are you looking for?", distinctArr);
-                //session.send(result.response);
-            }
+            //builder.Prompts.choice(session, "Which " + capitalizeFirstLetter(evangelist.entity) + " are you looking for?", distinctArr);
+            //session.send(result.response);
+        }
 }
 
 
@@ -229,11 +230,10 @@ dialog.matches("Find_TE", [
         } else {
                  searchAccount = new RegExp("\^\\b" + account + "\\b", "i");
         //search mapping array for searchAccount
-        var x = 0;
         var found = false;
                 // Next line to assist with debugging
                 // console.log("Looking for account " + searchAccount);
-        while ( x < accountArray.length) {
+        for (var x=0; x < accountArray.length; x+=1) {
             if (accountArray[x].Title.match(searchAccount)) {
             // post results to chat
                 if(accountArray[x].AssignedTE) {
@@ -241,8 +241,6 @@ dialog.matches("Find_TE", [
                     found = true;
                     }
                 }
-            x++;
-
             }
             if (!found) {
                 console.log( "Sorry, I couldn't find the TE for " + account);
@@ -418,24 +416,12 @@ dialog.matches("Find_Both", [function (session, args, next) {
                 // session.send( "Looking for the TE for " + searchAccount);
 
                 //search mapping array for searchAccount
-                var x = 0;
-
                 var found = false;
-                        // Next line to assist with debugging
-                        // // console.log("Looking for account");
-                while ( x < accountArray.length) {
+                for (x=0; x < accountArray.length; x+=1) {
                     if (accountArray[x].Title.match(searchAccount)) {
-                    //post results to chat
-                        if(accountArray[x].AssignedTE) {
-                            DisplayTEBECard(session, accountArray[x], "TE");
-                            found = true;
-                            }
-                        if(accountArray[x].AssignedBE) {
-                            DisplayTEBECard(session, accountArray[x], "BE");
-                            found = true;
-                            }
+                        DisplayAccountCard(session, accountArray[x]);
+                        found = true;
                         }
-                    x++;
                     }
                     if (!found) {
                         session.send("Sorry, I couldn't find the Evangelists for " + accountEntity.entity);
