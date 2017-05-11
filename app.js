@@ -381,7 +381,7 @@ dialog.matches("Find_Accounts", [
                         choiceStr.push(resArr[x]);
                         choiceArr.push(builder.CardAction.imBack(session, resArr[x], resArr[x]));
                     }
-                var card = new builder.ThumbnailCard(session);
+                var card = new builder.HeroCard(session);
                 card.buttons(choiceArr);
                 card.title("Click a button for more information about the account");
                 var message = new builder.Message(session).addAttachment(card);
