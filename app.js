@@ -123,17 +123,17 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
 }
 
 // Not using this function yet.  When used, it will display full info for an account in a single card rather than a card for each of the owners
-function DisplayAccountCard(session, accountInfo){
+function DisplayAccountCard(session, account){
     var msg = new builder.Message(session)
         .attachments([
             new builder.ThumbnailCard(session)
                 .title(account)
                 .subtitle("Click below for more information about the account owners.")
                // .text("Technical Evangelist: " + teOwner + "\n " + "Business Evangelist: " + beOwner)
-                 .buttons([
-                     builder.CardAction.postBack(session, "TE for " + accountInfo.Title, "TE: " + accountInfo.AssignedTE, "TE: " + accountInfo.AssignedTE),
-                     builder.CardAction.postBack(session, "BE for " + accountInfo.Title, "BE: " + accountInfo.AssignedBE, "BE: " + accountInfo.AssignedBE)
-                 ])
+                //  .buttons([
+                //      builder.CardAction.postBack(session, "TE for " + accountInfo.Title, "TE: " + accountInfo.AssignedTE, "TE: " + accountInfo.AssignedTE),
+                //      builder.CardAction.postBack(session, "BE for " + accountInfo.Title, "BE: " + accountInfo.AssignedBE, "BE: " + accountInfo.AssignedBE)
+                //  ])
             ]);
     session.send(msg);
 }
@@ -320,7 +320,8 @@ dialog.matches("Find_BE", [
 
 //===============================Beginning of Find Accounts==============
 
-dialog.matches("Find_Accounts", [function (session, args, next) {
+dialog.matches("Find_Accounts", [
+    function (session, args, next) {
     //handle the case where intent is List Accounts for BE or TE
     // use bot builder EntityRecognizer to parse out the LUIS entities
     var evangelist = builder.EntityRecognizer.findEntity(args.entities, "Evangelist");
@@ -343,7 +344,8 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
             var found = false;
             var resArr = [];
             var distinctArr = [];
-            var choiceStr = "";
+            var choiceStr = [];
+            var choiceArr = [];
             var titleStr = "";
             var whichAlias = "";
             var whichName = "";
@@ -353,14 +355,13 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                 tooManyPossibles = true;
             }
             if (!tooManyPossibles){
-                x=0;
+                
                 resArr=[];
-                while ( x < accountArray.length) {
+                for (x=0; x < accountArray.length; x+=1) {
                     // if text string found as EITHER BE or TE
                     if ((accountArray[x].AssignedTE.match(searchEvangelist)) || (accountArray[x].AssignedBE.match(searchEvangelist))) {
                         resArr.push(accountArray[x].Title);
                     }
-
                     if (accountArray[x].AssignedTE.match(searchEvangelist)){
                         titleStr = "Technical Evangelist";
                         whichAlias = accountArray[x].AssignedTEAlias;
@@ -371,31 +372,27 @@ dialog.matches("Find_Accounts", [function (session, args, next) {
                         whichAlias = accountArray[x].AssignedBEAlias;
                         whichName = accountArray[x].AssignedBE;
                     }
-                    x++;
                 }
                 resArr.sort();
                 if (resArr.length === 0) {
                     session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
                 } else {
                     for (x=0; x < resArr.length; x+=1){
-                        choiceStr = (choiceStr + resArr[x] + ", ");
+                        choiceStr.push(resArr[x]);
+                        choiceArr.push(builder.CardAction.imBack(session, resArr[x], resArr[x]));
                     }
-                    choiceStr = choiceStr.slice(0,(choiceStr.length-2));
-                    session.send('Owned Accounts: ' + choiceStr);
-                    // var msg = new builder.Message(session)
-                    //     .attachments([
-                    //         new builder.SigninCard(session)
-                    //             .text("Owned Accounts: " + choiceStr)
-                    //             // // .buttons([
-                    //             // //     builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichName)
-                    //             // // ])
-                    //     ]);
-                    // session.send(msg);
+                var card = new builder.ThumbnailCard(session).buttons(choiceArr);
+                var message = new builder.Message(session).addAttachment(card);
+                card.title = ("Which account are you interested in?");
+                builder.Prompts.choice(session, message, choiceStr);
                 }
                     // next line to assist with debug
                     // session.endDialog("Session Ended");
             }
             }
+        },
+        function (session, results, next) {
+            DisplayAccountCard(session, results.response.entity); 
         }
         ]);
 //===============================End of Find Accounts==========================
