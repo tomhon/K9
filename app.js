@@ -126,7 +126,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
 function DisplayAccountCard(session, account){
     var msg = new builder.Message(session)
         .attachments([
-            new builder.ThumbnailCard(session)
+            new builder.HeroCard(session)
                 .title(account)
                 .subtitle("Click below for more information about the account owners.")
                // .text("Technical Evangelist: " + teOwner + "\n " + "Business Evangelist: " + beOwner)
@@ -381,9 +381,10 @@ dialog.matches("Find_Accounts", [
                         choiceStr.push(resArr[x]);
                         choiceArr.push(builder.CardAction.imBack(session, resArr[x], resArr[x]));
                     }
-                var card = new builder.ThumbnailCard(session).buttons(choiceArr);
+                var card = new builder.ThumbnailCard(session);
+                card.buttons(choiceArr);
+                card.title("Click a button for more information about the account");
                 var message = new builder.Message(session).addAttachment(card);
-                card.title = ("Which account are you interested in?");
                 builder.Prompts.choice(session, message, choiceStr);
                 }
                     // next line to assist with debug
