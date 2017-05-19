@@ -54,13 +54,15 @@ connection.on('connect', function(err) {
         } else {
           console.log("Connected to " + config.server + " " + config.options.database);
           arrayErr.push("Connected to " + config.server);
-          loadMappingArray();
+          fullQueryText = "SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs";
+          queryText = fullQueryText;
+          loadMappingArray(queryText);
         }
 });
 
 //function to execute SQL query
-function loadMappingArray() {
-        request = new Request("SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs", function(err) {
+function loadMappingArray(queryText) {
+        request = new Request(queryText, function(err) {
 
          if (err) {
             console.log(err);
@@ -121,8 +123,8 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
     session.send(msg);
 }
 
-// Not using this function yet.  When used, it will display full info for an account in a single card rather than a card for each of the owners
-function DisplayAccountCard(session, accountInfo){
+function DisplayAccountCard(session, accountInfo, queryText){
+    loadMappingArray(queryText);
     var msg = new builder.Message(session)
         .attachments([
             new builder.ReceiptCard(session)
@@ -137,6 +139,7 @@ function DisplayAccountCard(session, accountInfo){
                  ])
             ]);
     session.send(msg);
+    // reset queryText?
 }
 
 // Capitalize First Letter of a String
@@ -190,7 +193,6 @@ var recognizer = new builder.LuisRecognizer(model);
 var dialog = new builder.IntentDialog({ recognizers: [recognizer] });
 bot.dialog("/", dialog);
 var account = "";
-
 
 // Add intent handlers
 
@@ -334,10 +336,6 @@ dialog.matches("Find_Accounts", [
     } else { 
         searchEvangelist = new RegExp("\\b" + evangelist.entity + "\\b", "i");
 
-            // Next line to assist with debugging
-            // session.send( "Looking for the accounts for " + searchEvangelist);
-
-            //search mapping array for searchAccount
             var x = 0;
             var found = false;
             var resArr = [];
@@ -348,7 +346,7 @@ dialog.matches("Find_Accounts", [
             var whichAlias = "";
             var whichName = "";
             var tooManyPossibles = false;
-
+            
             if (DistinctPerson(session, accountArray, resArr, distinctArr, searchEvangelist, evangelist)){
                 tooManyPossibles = true;
             }
@@ -377,27 +375,28 @@ dialog.matches("Find_Accounts", [
                 } else {
                     for (x=0; x < resArr.length; x+=1){
                         choiceStr.push(resArr[x]);
-                        choiceArr.push(builder.CardAction.imBack(session, resArr[x], resArr[x]));
+                        choiceArr.push(builder.CardAction.postBack(session, resArr[x], resArr[x]));
                     }
                 var card = new builder.HeroCard(session).buttons(choiceArr);
                 card.title("Choose one for more information");
                 var message = new builder.Message(session).addAttachment(card);
                 builder.Prompts.choice(session, message, choiceStr);
+                
                 }
-                    // next line to assist with debug
-                    // session.endDialog("Session Ended");
             }
             }
         },
         function (session, results, next) {
-            DisplayAccountCard(session, results.response.entity); 
+            queryText = ("SELECT AssignedTE, AssignedBE, AssignedTEAlias, AssignedBEAlias FROM dbo.PartnerIsvs WHERE Title = '" + results.response.entity + "'");
+            DisplayAccountCard(session, results.response.entity, queryText); 
         }
         ]);
 //===============================End of Find Accounts==========================
 
 //===============================Beginning of Find Both========================
 
-dialog.matches("Find_Both", [function (session, args, next) {
+dialog.matches("Find_Both", [
+    function (session, args, next) {
         //    console.log(args.entities);
 
         // use bot builder EntityRecognizer to parse out the LUIS entities
@@ -486,11 +485,7 @@ dialog.matches("Help", function (session, args, next) {
 
 //---------------------------------------------------------------------------------------------------
 
-
-
 dialog.onDefault(builder.DialogAction.send("Welcome to K9 on Microsoft Bot Framework. I can tell you which TE or BE manages any GISV partner."));
-
-// Setup Restify Server
 
 server.get("/", function (req, res) {
     res.send("K9 Production Bot Running MASTER BRANCH"
