@@ -39,6 +39,8 @@ connection.on('connect', function(err) {
         console.log("Connected to " + config.server + " " + config.options.database);
         arrayErr.push("Connected to " + config.server);
         fullQueryText = "SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs";
+        // Setting "fullQueryText" as extra step to always have an available "grab everything" query to reset queryText too whenever I need to call it
+        // This is in preparation for a potential rewrite where we query the DB when needed rather than maintaining EVERYTHING in memory
         queryText = fullQueryText;
         loadMappingArray(queryText);
     }
@@ -58,7 +60,7 @@ function loadMappingArray(queryText) {
         }
     });
 
-    //unpack data from SQL query
+    //unpack data from SQL query and put it in an array of objects
     request.on('row', function(columns) {
         rowObject = [];
         columns.forEach(function(column) {
@@ -75,6 +77,7 @@ function loadMappingArray(queryText) {
 
 //function to display results Card for TE or BE
 function DisplayTEBECard (session, accountInfo, BEorTE){
+    // set data for who we find to use in card
     if (BEorTE === "TE"){
         var whichTitle = "Technical";
         var whichAlias = accountInfo.AssignedTEAlias;
@@ -88,6 +91,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
         whichOwner = accountInfo.AssignedBE;
         srchStr = "TE";
     }
+    // build card
     var msg = new builder.Message(session)
         .attachments([
             new builder.HeroCard(session)
@@ -100,6 +104,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
                     builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + " for " + accountInfo.Title + "?")
                 ])
         ]);
+    // send card
     session.send(msg);
 }
 // **** Receipt Card not yet supported in Skype.  Simply sending account list as text for now in primary function.
@@ -205,7 +210,7 @@ dialog.matches("Find_TE", [
                 // console.log("Looking for account " + searchAccount);
         for (var x=0; x < accountArray.length; x+=1) {
             if (accountArray[x].Title.match(searchAccount)) {
-            // post results to chat
+            // call DisplayTEBECard to post results via a card
                 if(accountArray[x].AssignedTE) {
                 DisplayTEBECard(session, accountArray[x], "TE");
                     found = true;
@@ -262,7 +267,7 @@ dialog.matches("Find_BE", [
                 // // console.log("Looking for account");
         for (x=0; x < accountArray.length; x+=1) {
             if (accountArray[x].Title.match(searchAccount)) {
-            //post results to chat
+            // call DisplayTEBECard to post results via a card
                 if(accountArray[x].AssignedTE) {
                     DisplayTEBECard(session, accountArray[x], "BE");
                     found = true;
@@ -295,7 +300,7 @@ dialog.matches("Find_Accounts", [
             session.send("Sorry, I couldn't make out the name of the evangelist you are looking for.");
     } else { 
         searchEvangelist = new RegExp("\\b" + evangelist.entity + "\\b", "i");
-
+            // setup crazy number of variables to use
             var x = 0;
             var found = false;
             var resArr = [];
@@ -307,6 +312,8 @@ dialog.matches("Find_Accounts", [
             var whichName = "";
             var tooManyPossibles = false;
             
+            // call function to determine of the result set is more than one person.
+            // if it is, ask for more clarity for now.  ** Future feature: choice prompt to pick which person
             if (DistinctPerson(session, accountArray, resArr, distinctArr, searchEvangelist, evangelist)){
                 tooManyPossibles = true;
             }
@@ -317,11 +324,13 @@ dialog.matches("Find_Accounts", [
                     if ((accountArray[x].AssignedTE.match(searchEvangelist)) || (accountArray[x].AssignedBE.match(searchEvangelist))) {
                         resArr.push(accountArray[x].Title);
                     }
+                    // if we find a TE match, set variables
                     if (accountArray[x].AssignedTE.match(searchEvangelist)){
                         titleStr = "Technical Evangelist";
                         whichAlias = accountArray[x].AssignedTEAlias;
                         whichName = accountArray[x].AssignedTE;
                     }
+                    // if we find a BE match, set variables
                     if (accountArray[x].AssignedBE.match(searchEvangelist)){
                         titleStr = "Business Evangelist";
                         whichAlias = accountArray[x].AssignedBEAlias;
@@ -333,12 +342,14 @@ dialog.matches("Find_Accounts", [
                     session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
                 } else {
                     for (x=0; x < resArr.length; x+=1){
+                        // build text string of account results
                         if (x===0) {
                             choiceStr = resArr[x];
                         } else {
                             choiceStr = choiceStr + ', ' + resArr[x];
                         }
                     }
+                // create card to display resulting account list for this BE/TE
                 var msg = new builder.Message(session)
                     .attachments([
                         new builder.HeroCard(session)
@@ -348,6 +359,7 @@ dialog.matches("Find_Accounts", [
                                 builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichName),
                             ])
                     ]);
+                // send card to channel
                 session.send(msg);
                 }
             }
@@ -382,7 +394,8 @@ dialog.matches("Find_Both", [
                 var found = false;
                 for (x=0; x < accountArray.length; x+=1) {
                     if (accountArray[x].Title.match(searchAccount)) {
-                        DisplayAccountCard(session, accountArray[x]);
+                        DisplayTEBECard(session, accountArray[x], "TE");
+                        DisplayTEBECard(session, accountArray[x], "BE");
                         found = true;
                         }
                     }
