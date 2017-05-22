@@ -107,7 +107,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
 
     var msg = new builder.Message(session)
         .attachments([
-            new builder.ThumbnailCard(session)
+            new builder.HeroCard(session)
                 .title(whichOwner)
                 .subtitle(whichTitle + " Evangelist for " + accountInfo.Title)
                 .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
