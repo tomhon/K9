@@ -9,24 +9,10 @@ server.listen(process.env.port || 3978, function () {
     console.log("%s listening to %s", server.name, server.url);
 });
 
-
-// /*-----------------------------------------------------------------------------
-// This Bot demonstrates how to use an IntentDialog with a LuisRecognizer to add
-// natural language support to a bot. The example also shows how to use
-// UniversalBot.send() to push notifications to a user.
-
-// For a complete walkthrough of creating this bot see the article below.
-
-//     http://docs.botframework.com/builder/node/guides/understanding-natural-language/
-
-// -----------------------------------------------------------------------------*/
-
 //Connect to SQL Server
 var Request = require('tedious').Request;
 var TYPES = require('tedious').TYPES;
 var Connection = require('tedious').Connection;
-
-//initialize mapping data array
 
 //accountArray is sourced from SQL Server
 var accountArray = [];
@@ -35,7 +21,6 @@ var accountArray = [];
 var arrayErr = [];
 
 // set up SQL server connection using Application Environment Variables
-
 var config = {
         userName: process.env.SQLuserName,
         password: process.env.SQLpassword,
@@ -47,46 +32,45 @@ var config = {
 var connection = new Connection(config);
 connection.on('connect', function(err) {
     // If no error, then good to proceed.
-
-        if (err) {
-        //    console.log(err);
-            arrayErr.push(err);
-        } else {
-          console.log("Connected to " + config.server + " " + config.options.database);
-          arrayErr.push("Connected to " + config.server);
-          fullQueryText = "SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs";
-          queryText = fullQueryText;
-          loadMappingArray(queryText);
-        }
+    if (err) {
+    //    console.log(err);
+        arrayErr.push(err);
+    } else {
+        console.log("Connected to " + config.server + " " + config.options.database);
+        arrayErr.push("Connected to " + config.server);
+        fullQueryText = "SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs";
+        queryText = fullQueryText;
+        loadMappingArray(queryText);
+    }
 });
 
 //function to execute SQL query
 function loadMappingArray(queryText) {
-        request = new Request(queryText, function(err) {
+    request = new Request(queryText, function(err) {
 
-         if (err) {
-            console.log(err);
-            arrayErr.push(err);
-          }
-        else {
-            console.log("SQL request succeeded");
-            arrayErr.push("SQL request succeeded");
-          }
-        });
+        if (err) {
+        console.log(err);
+        arrayErr.push(err);
+        }
+    else {
+        console.log("SQL request succeeded");
+        arrayErr.push("SQL request succeeded");
+        }
+    });
 
     //unpack data from SQL query
-        request.on('row', function(columns) {
-            rowObject = [];
-            columns.forEach(function(column) {
-              if (column.value === null) {
-                rowObject[column.metadata.colName] = "unknown";
-              } else {
-                rowObject[column.metadata.colName] = column.value;
-                  }
-            });
-            accountArray.push(rowObject);
+    request.on('row', function(columns) {
+        rowObject = [];
+        columns.forEach(function(column) {
+            if (column.value === null) {
+            rowObject[column.metadata.colName] = "unknown";
+            } else {
+            rowObject[column.metadata.colName] = column.value;
+                }
         });
-        connection.execSql(request);
+        accountArray.push(rowObject);
+    });
+    connection.execSql(request);
 }
 
 //function to display results Card for TE or BE
@@ -104,16 +88,12 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
         whichOwner = accountInfo.AssignedBE;
         srchStr = "TE";
     }
-
     var msg = new builder.Message(session)
         .attachments([
             new builder.HeroCard(session)
                 .title(whichOwner)
                 .subtitle(whichTitle + " Evangelist for " + accountInfo.Title)
                 .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
-                // .images([
-                //     builder.CardImage.create(session, "http://who/photos/" + whichAlias + ".jpg")
-                // ])
                 .buttons([
                     builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
                     builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
@@ -122,8 +102,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
         ]);
     session.send(msg);
 }
-
-// **** Receipt Card not yet supported in Skype.  NYI for now.
+// **** Receipt Card not yet supported in Skype.  Simply sending account list as text for now in primary function.
 // function DisplayAccountCard(session, accountInfo, queryText){
 //     loadMappingArray(queryText);
 //     var msg = new builder.Message(session)
@@ -150,35 +129,26 @@ function capitalizeFirstLetter(string) {
 
 //function to narrow down result set to discreet individual
 function DistinctPerson(session, accountArray, resArr, distinctArr, searchEvangelist, evangelist){
-        // build an array of matching BEs and TEs from search string
-        for (x=0; x < accountArray.length; x+=1) {
-                if (accountArray[x].AssignedTE.match(searchEvangelist)) {
-                resArr.push(accountArray[x].AssignedTE);
-            } else if (accountArray[x].AssignedBE.match(searchEvangelist)) {
-                resArr.push(accountArray[x].AssignedBE);
+    // build an array of matching BEs and TEs from search string
+    for (x=0; x < accountArray.length; x+=1) {
+            if (accountArray[x].AssignedTE.match(searchEvangelist)) {
+            resArr.push(accountArray[x].AssignedTE);
+        } else if (accountArray[x].AssignedBE.match(searchEvangelist)) {
+            resArr.push(accountArray[x].AssignedBE);
+        }
+    }
+    for (x=0;x<resArr.length;x+=1) {
+        if(distinctArr.indexOf(resArr[x])===-1)
+            {
+            distinctArr.push(resArr[x]);
             }
-        }
-        for (x=0;x<resArr.length;x+=1) {
-            if(distinctArr.indexOf(resArr[x])===-1)
-                {
-                distinctArr.push(resArr[x]);
-                }
-        }
-        // If there is more than one Evangelist returned from the search, prompt for which one you want to know more about
-        if (distinctArr.length>1) {
-            session.send("There is more than one person named " + capitalizeFirstLetter(evangelist.entity) + ". Please be more specific.");
-            return true;
-            // NEED TO GET THE RESULTS FROM THE PROMPT AND SEND TO BOT
-
-            //builder.Prompts.choice(session, "Which " + capitalizeFirstLetter(evangelist.entity) + " are you looking for?", distinctArr);
-            //session.send(result.response);
-        }
+    }
+    // If there is more than one Evangelist returned from the search, prompt for which one you want to know more about
+    if (distinctArr.length>1) {
+        session.send("There is more than one person named " + capitalizeFirstLetter(evangelist.entity) + ". Please be more specific.");
+        return true;
+    }
 }
-
-
-// Create bot and bind to console
-// var connector = new builder.ConsoleConnector().listen();
-// var bot = new builder.UniversalBot(connector);
 
 // Create bot and bind to chat
 var connector = new builder.ChatConnector({
@@ -211,17 +181,14 @@ dialog.matches("Find_TE", [
             // Prompt for account
             builder.Prompts.text(session, "Which account would you like to find the TE for?");
             }
-        }
-        ,
+    },
     function (session, results, next) {
         if (results.response) {
             account = results.response;
             console.log("Account " + account + " now recongized");
         }
         next({response: account});
-    }
-    ,
-
+    },
     function (session, results) {
         var searchAccount = "";
         account = results.response;
@@ -270,17 +237,14 @@ dialog.matches("Find_BE", [
             // Prompt for account
             builder.Prompts.text(session, "Which account would you like to find the BE for?");
             }
-        }
-    ,
+    },
     function (session, results, next) {
         if (results.response) {
             account = results.response;
             console.log("Account " + account + " now recongized");
         }
         next({response: account});
-
-    }
-    ,
+    },
     function (session, results) {
         var searchAccount = "";
         account = results.response;
@@ -309,12 +273,7 @@ dialog.matches("Find_BE", [
                 console.log( "Sorry, I couldn't find the BE for " + account);
                 session.send( "Sorry, I couldn't find the BE for " + account);
                 }
-
-            // next line to assist with debug
-            //   session.endDialog("Session Ended");
-
         }
-
     }
 ]);
 //===============================End of Find BE==========================
@@ -352,7 +311,6 @@ dialog.matches("Find_Accounts", [
                 tooManyPossibles = true;
             }
             if (!tooManyPossibles){
-                
                 resArr=[];
                 for (x=0; x < accountArray.length; x+=1) {
                     // if text string found as EITHER BE or TE
@@ -381,10 +339,6 @@ dialog.matches("Find_Accounts", [
                             choiceStr = choiceStr + ', ' + resArr[x];
                         }
                     }
-                // var card = new builder.HeroCard(session).text(choiceStr);
-                // card.title("Accounts owned by " + whichName);
-                // var message = new builder.Message(session).addAttachment(card);
-                // builder.Prompts.choice(session, message, choiceStr);
                 var msg = new builder.Message(session)
                     .attachments([
                         new builder.HeroCard(session)
@@ -397,13 +351,13 @@ dialog.matches("Find_Accounts", [
                 session.send(msg);
                 }
             }
-            }
-        },
-        function (session, results, next) {
-            queryText = ("SELECT AssignedTE, AssignedBE, AssignedTEAlias, AssignedBEAlias FROM dbo.PartnerIsvs WHERE Title = '" + results.response.entity + "'");
-            DisplayAccountCard(session, results.response.entity, queryText); 
         }
-        ]);
+    },
+    function (session, results, next) {
+        queryText = ("SELECT AssignedTE, AssignedBE, AssignedTEAlias, AssignedBEAlias FROM dbo.PartnerIsvs WHERE Title = '" + results.response.entity + "'");
+        DisplayAccountCard(session, results.response.entity, queryText); 
+    }
+    ]);
 //===============================End of Find Accounts==========================
 
 //===============================Beginning of Find Both========================
@@ -423,9 +377,6 @@ dialog.matches("Find_Both", [
                 session.send("Sorry, I couldn't make out the name of the account you are looking for.");
         } else {
             searchAccount = new RegExp("\\b" + accountEntity.entity + "\\b", "i");
-
-                // Next line to assist with debugging
-                // session.send( "Looking for the TE for " + searchAccount);
 
                 //search mapping array for searchAccount
                 var found = false;
