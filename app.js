@@ -123,24 +123,25 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
     session.send(msg);
 }
 
-function DisplayAccountCard(session, accountInfo, queryText){
-    loadMappingArray(queryText);
-    var msg = new builder.Message(session)
-        .attachments([
-            new builder.ReceiptCard(session)
-                .title(accountInfo.Title)
-                .items([
-                    builder.ReceiptItem.create(session, accountInfo.AssignedTE, "Technical Evangelist: "),
-                    builder.ReceiptItem.create(session, accountInfo.AssignedBE, "Business Evangelist: ")
-                ])
-                .buttons([
-                     builder.CardAction.openUrl(session, "mailto:" + accountInfo.AssignedTEAlias + "@microsoft.com", "Email " + accountInfo.AssignedTE),
-                     builder.CardAction.openUrl(session, "mailto:" + accountInfo.AssignedBEAlias + "@microsoft.com", "Email " + accountInfo.AssignedBE)
-                 ])
-            ]);
-    session.send(msg);
+// **** Receipt Card not yet supported in Skype.  NYI for now.
+// function DisplayAccountCard(session, accountInfo, queryText){
+//     loadMappingArray(queryText);
+//     var msg = new builder.Message(session)
+//         .attachments([
+//             new builder.ReceiptCard(session)
+//                 .title(accountInfo.Title)
+//                 .items([
+//                     builder.ReceiptItem.create(session, accountInfo.AssignedTE, "Technical Evangelist: "),
+//                     builder.ReceiptItem.create(session, accountInfo.AssignedBE, "Business Evangelist: ")
+//                 ])
+//                 .buttons([
+//                      builder.CardAction.openUrl(session, "mailto:" + accountInfo.AssignedTEAlias + "@microsoft.com", "Email " + accountInfo.AssignedTE),
+//                      builder.CardAction.openUrl(session, "mailto:" + accountInfo.AssignedBEAlias + "@microsoft.com", "Email " + accountInfo.AssignedBE)
+//                  ])
+//             ]);
+//     session.send(msg);
     // reset queryText?
-}
+//}
 
 // Capitalize First Letter of a String
 function capitalizeFirstLetter(string) {
@@ -340,7 +341,7 @@ dialog.matches("Find_Accounts", [
             var found = false;
             var resArr = [];
             var distinctArr = [];
-            var choiceStr = [];
+            var choiceStr = "";
             var choiceArr = [];
             var titleStr = "";
             var whichAlias = "";
@@ -374,14 +375,26 @@ dialog.matches("Find_Accounts", [
                     session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
                 } else {
                     for (x=0; x < resArr.length; x+=1){
-                        choiceStr.push(resArr[x]);
-                        choiceArr.push(builder.CardAction.postBack(session, resArr[x], resArr[x]));
+                        if (x===0) {
+                            choiceStr = resArr[x];
+                        } else {
+                            choiceStr = choiceStr + ', ' + resArr[x];
+                        }
                     }
-                var card = new builder.HeroCard(session).buttons(choiceArr);
-                card.title("Choose one for more information");
-                var message = new builder.Message(session).addAttachment(card);
-                builder.Prompts.choice(session, message, choiceStr);
-                
+                // var card = new builder.HeroCard(session).text(choiceStr);
+                // card.title("Accounts owned by " + whichName);
+                // var message = new builder.Message(session).addAttachment(card);
+                // builder.Prompts.choice(session, message, choiceStr);
+                var msg = new builder.Message(session)
+                    .attachments([
+                        new builder.HeroCard(session)
+                            .title("Accounts owned by " + whichName)
+                            .text(choiceStr)
+                            .buttons([
+                                builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichName),
+                            ])
+                    ]);
+                session.send(msg);
                 }
             }
             }
