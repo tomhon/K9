@@ -200,8 +200,7 @@ dialog.matches("Find_TE", [
         console.log("in lookup function, account = " + account);
         //create regex version of the searchAccount
         if (!account) {
-                // console.log("Sorry, I couldn't make out the name of the account you are looking for.");
-                builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for.");
+                builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for. Type 'Help' to find out what you can ask.");
         } else {
                  searchAccount = new RegExp("\^\\b" + account + "\\b", "i");
         //search mapping array for searchAccount
@@ -218,8 +217,8 @@ dialog.matches("Find_TE", [
                 }
             }
             if (!found) {
-                console.log( "Sorry, I couldn't find the TE for " + account);
-                session.send("Sorry, I couldn't find the TE for " + account);
+                console.log( "Sorry, I couldn't find the TE for " + account + ". Type 'Help' to find out what you can ask.");
+                session.send("Sorry, I couldn't find the TE for " + account + ". Type 'Help' to find out what you can ask.");
             }
             // next line to assist with debug
             //   session.endDialog("Session Ended");
@@ -257,7 +256,7 @@ dialog.matches("Find_BE", [
         //create regex version of the searchAccount
         if (!account) {
                 // console.log("Sorry, I couldn't make out the name of the account you are looking for.");
-                builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for.");
+                builder.prompts.text(session, "Sorry, I couldn't make out the name of the account you are looking for. Type 'Help' to find out what you can ask.");
         } else {
             searchAccount = new RegExp("\\b" + account + "\\b", "i");
 
@@ -275,8 +274,8 @@ dialog.matches("Find_BE", [
                 }
             }
             if (!found) {
-                console.log( "Sorry, I couldn't find the BE for " + account);
-                session.send( "Sorry, I couldn't find the BE for " + account);
+                console.log( "Sorry, I couldn't find the BE for " + account + ". Type 'Help' to find out what you can ask.");
+                session.send( "Sorry, I couldn't find the BE for " + account + ". Type 'Help' to find out what you can ask.");
                 }
         }
     }
@@ -297,7 +296,7 @@ dialog.matches("Find_Accounts", [
 
     //create regex version of the searchEvangelist
     if (!evangelist) {
-            session.send("Sorry, I couldn't make out the name of the evangelist you are looking for.");
+            session.send("Sorry, I couldn't make out the name of the evangelist you are looking for. Type 'Help' to find out what you can ask.");
     } else { 
         searchEvangelist = new RegExp("\\b" + evangelist.entity + "\\b", "i");
             // setup crazy number of variables to use
@@ -339,7 +338,7 @@ dialog.matches("Find_Accounts", [
                 }
                 resArr.sort();
                 if (resArr.length === 0) {
-                    session.send("Sorry, I couldn't find the accounts for " + evangelist.entity);
+                    session.send("Sorry, I couldn't find the accounts for " + evangelist.entity + ". Type 'Help' to find out what you can ask.");
                 } else {
                     for (x=0; x < resArr.length; x+=1){
                         // build text string of account results
@@ -386,7 +385,7 @@ dialog.matches("Find_Both", [
 
         //create regex version of the searchAccount
         if (!accountEntity) {
-                session.send("Sorry, I couldn't make out the name of the account you are looking for.");
+                session.send("Sorry, I couldn't make out the name of the account you are looking for. Type 'Help' to find out what you can ask.");
         } else {
             searchAccount = new RegExp("\\b" + accountEntity.entity + "\\b", "i");
 
@@ -400,12 +399,8 @@ dialog.matches("Find_Both", [
                         }
                     }
                     if (!found) {
-                        session.send("Sorry, I couldn't find the Evangelists for " + accountEntity.entity);
+                        session.send("Sorry, I couldn't find the Evangelists for " + accountEntity.entity + ". Type 'Help' to learn what you can ask.");
                         }
-
-                    // next line to assist with debug
-                    //   session.endDialog("Session Ended");
-
                 }}]);
 //===============================End of Find Both==========================
 
