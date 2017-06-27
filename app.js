@@ -288,9 +288,6 @@ dialog.matches('Find_BE', [
                     found = true;
                     }
                 };
-            x++;
-            x++;
-            x++;
             };
             if (!found) {
 
