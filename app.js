@@ -39,7 +39,7 @@ connection.on('connect', function(err) {
     } else {
         console.log("Connected to " + config.server + " " + config.options.database);
         arrayErr.push("Connected to " + config.server);
-        fullQueryText = "SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.PartnerIsvs";
+        fullQueryText = "SELECT Title, AssignedTE, AssignedBE, AssignedTEAlias, AssignedTELocation, AssignedBEAlias FROM dbo.FY18PartnerIsvs";
         // Setting "fullQueryText" as extra step to always have an available "grab everything" query to reset queryText too whenever I need to call it
         // This is in preparation for a potential rewrite where we query the DB when needed rather than maintaining EVERYTHING in memory
         queryText = fullQueryText;
@@ -80,29 +80,31 @@ function loadMappingArray(queryText) {
 function DisplayTEBECard (session, accountInfo, BEorTE){
     // set data for who we find to use in card
     if (BEorTE === "TE"){
-        var whichTitle = "Technical";
+        var whichTitle = "Technical Evangelist";
         var whichAlias = accountInfo.AssignedTEAlias;
         var whichLocation = accountInfo.AssignedTELocation;
         var whichOwner = accountInfo.AssignedTE;
         var srchStr = "BE";
+        var srchStr2 = "PDM";
     } else if (BEorTE === "BE"){
-        whichTitle = "Business";
+        whichTitle = "Partner Development Manager";
         whichAlias = accountInfo.AssignedBEAlias;
         whichLocation = "unknown";
         whichOwner = accountInfo.AssignedBE;
         srchStr = "TE";
+        srchStr2 = "TE";
     }
     // build card
     var msg = new builder.Message(session)
         .attachments([
             new builder.HeroCard(session)
                 .title(whichOwner)
-                .subtitle(whichTitle + " Evangelist for " + accountInfo.Title)
+                .subtitle(whichTitle + " for " + accountInfo.Title)
                 .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
                 .buttons([
                     builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
                     builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
-                    builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr + " for " + accountInfo.Title + "?")
+                    builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr2 + " for " + accountInfo.Title + "?")
                 ])
         ]);
     // send card
@@ -249,7 +251,7 @@ dialog.matches('Find_BE', [
             } else {
             // Prompt for account
 
-            builder.Prompts.text(session, "Which account would you like to find the BE for?");
+            builder.Prompts.text(session, "Which account would you like to find the PDM for?");
             }
     },
 
@@ -291,8 +293,8 @@ dialog.matches('Find_BE', [
             };
             if (!found) {
 
-                console.log( "Sorry, I couldn't find the BE for " + account + ". Type 'Help' to find out what you can ask.");
-                session.send( "Sorry, I couldn't find the BE for " + account + ". Type 'Help' to find out what you can ask.");
+                console.log( "Sorry, I couldn't find the PDM for " + account + ". Type 'Help' to find out what you can ask.");
+                session.send( "Sorry, I couldn't find the PDM for " + account + ". Type 'Help' to find out what you can ask.");
                 }
 
         }
@@ -315,7 +317,7 @@ dialog.matches("Find_Accounts", [
 
     //create regex version of the searchEvangelist
     if (!evangelist) {
-            session.send("Sorry, I couldn't make out the name of the evangelist you are looking for. Type 'Help' to find out what you can ask.");
+            session.send("Sorry, I couldn't make out the name of the contact you're looking for. Type 'Help' to find out what you can ask.");
     } else { 
 
         searchEvangelist = new RegExp("\\b" + evangelist.entity + "\\b", "i");
@@ -351,7 +353,7 @@ dialog.matches("Find_Accounts", [
                     }
                     // if we find a BE match, set variables
                     if (accountArray[x].AssignedBE.match(searchEvangelist)){
-                        titleStr = "Business Evangelist";
+                        titleStr = "Partner Development Manager";
                         whichAlias = accountArray[x].AssignedBEAlias;
                         whichName = accountArray[x].AssignedBE;
                     }
@@ -424,7 +426,7 @@ dialog.matches("Find_Both", [
                         }
                     }
                     if (!found) {
-                        session.send("Sorry, I couldn't find the Evangelists for " + accountEntity.entity + ". Type 'Help' to learn what you can ask.");
+                        session.send("Sorry, I couldn't find the contacts for " + accountEntity.entity + ". Type 'Help' to learn what you can ask.");
                         }
 
                 }}]);
@@ -448,7 +450,7 @@ dialog.matches('Fetch', function (session, args, next) {
 //handle the case where there's no recognized intent
 
 dialog.matches('None', function (session, args, next) { 
-    session.send( "Welcome to K9 on Microsoft Bot Framework. I can tell you which TE or BE manages any GISV partner." ); 
+    session.send( "Welcome to K9 on Microsoft Bot Framework. I can tell you which TE or PDM manages any GISV partner." ); 
     });
 //---------------------------------------------------------------------------------------------------    
 //handle the case where intent is happy
@@ -476,7 +478,7 @@ dialog.matches('Abuse', function (session, args, next) {
 dialog.matches('Help', function (session, args, next) { 
     session.send( "Ask me Who is the TE for Netflix?" ); 
     session.send( "... or Who is the TE for Amazon?" ); 
-    session.send( "... or Who are the TE and BE for Facebook?" ); 
+    session.send( "... or Who are the TE and PDM for Facebook?" ); 
     session.send( "... or Which accounts does Ian manage?" ); 
         //   session.endDialog("Session Ended");
     });  
