@@ -103,7 +103,7 @@ function DisplayTEBECard (session, accountInfo, BEorTE){
                 .text("Alias: " + whichAlias +  "\n" + "Location: " + whichLocation)
                 .buttons([
                     builder.CardAction.openUrl(session, "mailto:" + whichAlias + "@microsoft.com", "Email " + whichOwner),
-                    builder.CardAction.postBack(session, "which accounts does " + whichOwner + " own?", "Other Accounts", "Other Accounts"),
+                    builder.CardAction.postBack(session, "Which accounts does " + whichOwner + " own?", "Which accounts does " + whichOwner + " own?"),
                     builder.CardAction.postBack(session, srchStr + " for " + accountInfo.Title, srchStr2 + " for " + accountInfo.Title + "?")
                 ])
         ]);
